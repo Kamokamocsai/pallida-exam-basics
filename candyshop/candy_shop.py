@@ -38,21 +38,28 @@ class CandyShop(object):
             
 
     def sell(self, name, amount):
-        if name = "candy":
-            
+        if name == "candy":
+            if self.candy_counter >= amount:
+                self.candy_counter -= amount
+                self.income += amount * self.prize_of_candy
 
-        elif name = "lollipop":
-            pass
-        
-
+        elif name == "lollipop":
+            if self.lollipop_counter >= amount:
+                self.lollipop_counter -= amount
+                self.income += amount * self.prize_of_lollipop
+                
+    
     def raise_prices(self, number):
-        pass
+        self.prize_of_candy = self.prize_of_candy+(number/100)
+        self.prize_of_lollipop = self.prize_of_lollipop+(number/100)
 
     def buy_sugar(self, amount):
-        pass
+        self.sugar += amount
+        prize = amount/10
+        self.income -= prize
 
     def status(self):
-        return "Inventory: {} candies, {} lollipops, Income: {}, Sugar: {}gr".format(self.candy_counter,
+        return "Inventory: {} candies, {} lollipops, Income: {}$, Sugar: {}gr".format(self.candy_counter,
                                                                                    self.lollipop_counter, self.income, self.sugar)
 
 
