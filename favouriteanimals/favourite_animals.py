@@ -1,9 +1,19 @@
-# The program's aim is to collect your favourite animals and store them in a text file.
-# There is a given text file called '''favourites.txt''', it will contain the animals
-# If ran from the command line without arguments
-# It should print out the usage:
-# ```fav_animals [animal] [animal]```
-# You can add as many command line arguments as many favourite you have.
-# One animal should be stored only at once
-# Each animal should be written in separate lines
-# The program should only save animals, no need to print them
+from sys import argv
+
+class FavAnimals():
+    def __init__(self):
+        user_input = argv
+        if len(user_input) == 1:
+            self.print_instructions()
+
+        elif len(user_input) == 2:
+            with open('favourites.txt', 'a') as file:
+                file.write(str(user_input[1:]) + "\n")
+
+    
+    def print_instructions(self):
+        print("fav_animals [animal] [animal]")
+
+
+controller = FavAnimals()
+    
