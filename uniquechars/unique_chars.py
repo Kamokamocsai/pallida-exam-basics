@@ -1,16 +1,14 @@
 def unique_characters(word):
-    output = []
+    unique_letters = []
+    double_letters = []
     for letter in word:
-        if letter in output:
-            pass
+        if letter in unique_letters:
+            double_letters.append(letter)
         else:
-            output.append(letter)
+            unique_letters.append(letter)
     
-    for letter in word:
-        if output[0] == word[0]:
-            output.remove(output[0])
+    output = [letter for letter in unique_letters if letter not in double_letters]
 
     return output
 
-
-print(unique_characters("anagram"))
+print(unique_characters("abakuszu"))
