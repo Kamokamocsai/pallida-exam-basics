@@ -2,6 +2,7 @@ import unittest
 from unique_chars import unique_characters
 
 class LetterCounterTest(unittest.TestCase):
+    
     def test_empty(self):
         self.assertEqual(unique_characters(''), [])
     
