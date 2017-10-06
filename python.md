@@ -32,8 +32,9 @@ The application is accepted if:
 
 ###  What is the difference between a function and a method? [2p]
 #### Your answer:
-
+Called the function by its name. It has parameter(s) and may have a return value.
+Method is called by its name that is associated with an object / class.
 
 ### What is the constructor? When it is used? [2p]
 #### Your answer:
-
+Constructor (e.g. __init__) in a class is automatedly run, when the class is called.
