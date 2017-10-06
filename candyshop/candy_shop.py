@@ -21,22 +21,29 @@ class CandyShop(object):
 
     def __init__(self, sugar):
         self.sugar = sugar
-        self.stored_sugar = str(self.sugar) + "gr" 
         self.income = 0
-        self.storage = []
         self.lollipop_counter = 0
         self.candy_counter = 0
+        self.prize_of_candy = 20
+        self.prize_of_lollipop = 10
 
-        
 
     def create_sweets(self, name_of_sweet):
         if name_of_sweet == "candy":
             self.sugar -= 10
+            self.candy_counter += 1
         elif name_of_sweet == "lollipop":
-            pass
+            self.sugar -= 5
+            self.lollipop_counter += 1
+            
 
     def sell(self, name, amount):
-        pass
+        if name = "candy":
+            
+
+        elif name = "lollipop":
+            pass
+        
 
     def raise_prices(self, number):
         pass
@@ -45,8 +52,8 @@ class CandyShop(object):
         pass
 
     def status(self):
-        return "Inventory: {} candies, {} lollipops, Income: {}, Sugar: {}".format(self.candy_counter,
-                                                                                   self.lollipop_counter, self.income, self.stored_sugar)
+        return "Inventory: {} candies, {} lollipops, Income: {}, Sugar: {}gr".format(self.candy_counter,
+                                                                                   self.lollipop_counter, self.income, self.sugar)
 
 
 candy_shop = CandyShop(300)
@@ -58,15 +65,15 @@ print(candy_shop.status())
 # Should print out:
 # Invetory: 2 candies, 2 lollipops, Income: 0, Sugar: 270gr
 candy_shop.sell("candy", 1)
-print(candy_shop)
+print(candy_shop.status())
 # Should print out:
 # "Invetory: 1 candies, 2 lollipops, Income:20, Sugar: 285gr"
 candy_shop.raise_prices(5)
 candy_shop.sell("lollipop", 1)
-print(candy_shop)
+print(candy_shop.status())
 # Should print out:
 # "Invetory: 1 candies, 1 lollipops, Income:35, Sugar: 285gr"
 candy_shop.buy_sugar(300)
-print(candy_shop)
+print(candy_shop.status())
 # Should print out:
 # "Invetory: 1 candies, 1 lollipops, Income:5, Sugar: 315gr"
