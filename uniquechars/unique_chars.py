@@ -11,4 +11,5 @@ def unique_characters(word):
 
     return output
 
-print(unique_characters("abakuszu"))
+
+print(unique_characters("green fox academy"))
